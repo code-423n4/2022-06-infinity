@@ -1,0 +1,49 @@
+{
+  "name": "exchange-contracts-v2",
+  "version": "1.0.0",
+  "description": "Gas optimized exchange contracts",
+  "scripts": {
+    "test": "npx hardhat test",
+    "build": "rimraf artifacts && rimraf cache && npx hardhat compile --force",
+    "format": "npx prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infinity-xyz/exchange-contracts-v2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/infinity-xyz/exchange-contracts-v2/issues"
+  },
+  "homepage": "https://github.com/infinity-xyz/exchange-contracts-v2#readme",
+  "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "@nomiclabs/hardhat-etherscan": "^3.0.3",
+    "@openzeppelin/contracts": "4.5.0",
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "^17.0.23",
+    "@uniswap/lib": "^4.0.1-alpha",
+    "dotenv": "^16.0.0",
+    "hardhat": "^2.9.2",
+    "hardhat-contract-sizer": "^2.5.1",
+    "hardhat-gas-reporter": "^1.0.8",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "chai": "^4.3.6",
+    "ethers": "^5.6.2",
+    "prettier": "^2.6.2",
+    "prettier-plugin-solidity": "^1.0.0-beta.19",
+    "ts-node": "^10.7.0"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "printWidth": 120,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "semi": true
+  }
+}
