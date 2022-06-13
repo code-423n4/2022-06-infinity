@@ -13,8 +13,6 @@ describe('Staker', function () {
     mock721Contract1,
     mock721Contract2,
     mock721Contract3,
-    currencyRegistry,
-    complicationRegistry,
     obComplication,
     infinityTreasury,
     infinityStaker;
@@ -27,7 +25,6 @@ describe('Staker', function () {
   const HOUR = MINUTE * 60;
   const DAY = HOUR * 24;
   const MONTH = DAY * 30;
-  const YEAR = MONTH * 12;
   const UNIT = toBN(1e18);
   const INFLATION = toBN(250_000_000).mul(UNIT);
   const CLIFF = toBN(6);

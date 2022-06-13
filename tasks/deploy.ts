@@ -1,7 +1,6 @@
 import { task } from 'hardhat/config';
 import { deployContract } from './utils';
-import { BigNumber, Contract, ethers } from 'ethers';
-import { parseEther } from 'ethers/lib/utils';
+import { Contract, ethers } from 'ethers';
 require('dotenv').config();
 
 // mainnet
@@ -22,7 +21,6 @@ infinityExchange: Contract,
   const HOUR = MINUTE * 60;
   const DAY = HOUR * 24;
   const MONTH = DAY * 30;
-  const YEAR = MONTH * 12;
   const UNIT = toBN(1e18);
   const INFLATION = toBN(250_000_000).mul(UNIT);
   const CLIFF = toBN(6);
