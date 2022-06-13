@@ -2,7 +2,7 @@
 - $47,500 USDC main award pot
 - $2,500 USDC gas optimization award pot
 - Join [C4 Discord](https://discord.gg/code4rena) to register
-- Submit findings [using the C4 form](https://code4rena.com/contests/2022-06-infinity-contest/submit)
+- Submit findings [using the C4 form](https://code4rena.com/contests/2022-06-infinity-nft-marketplace-contest/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts June 14, 2022 20:00 UTC
 - Ends June 19, 2022 19:59 UTC
@@ -32,10 +32,10 @@ Together with our off chain sniping engine, the contracts support a host of feat
 
 Contracts are designed to be extensible. The main contract is `InfinityExchange.sol` which is used for taking approvals for spending NFTs and transaction currencies like `WETH`. It also has transfer functions that move assets between addresses. The contract is extensible via `Complications`. Complications are used to extend the functionality of the main contract to support different order types. We currently have one complication - `InfinityOrderBookComplication` that supports the order types above. More `complications` are in the works.
 
-- [InfinityExchange.sol](./contracts/core/InfinityExchange.sol) - main contract that stores state and has user approvals for spending assets
-- [InfinityOrderBookComplication.sol](./contracts/core/InfinityOrderBookComplication.sol) - our first complication that helps execute the order types listed above
+- [InfinityExchange.sol](https://github.com/code-423n4/2022-06-infinity/blob/main/contracts/core/InfinityExchange.sol) - main contract that stores state and has user approvals for spending assets
+- [InfinityOrderBookComplication.sol](https://github.com/code-423n4/2022-06-infinity/blob/main/contracts/core/InfinityOrderBookComplication.sol) - our first complication that helps execute the order types listed above
 
-![Contracts graph](./static/contractGraph.svg?sanitize-true)
+![Contracts graph](https://github.com/code-423n4/2022-06-infinity/blob/main/static/contractGraph.svg?sanitize-true)
 
 # Staking and Token contracts
 
@@ -45,8 +45,8 @@ Staking contract allows people to stake Infinity tokens to earn voting power. Vo
 
 Token contract defines the Infinity ($NFT) token. It comes with a timelock config that allows gradual supply increase overtime. There is a max supply of 1B tokens. Initial supply will be 250M. There are 3 inflation epochs, each with a time gap of 6 months. Each inflation epoch adds 250M tokens to the supply. After 1B max supply is reached there won't be any more supply unless the max number of epochs is increased. Any change to timelock config requires a thawing period of 30 days so that the community has enough time to be updated on any changes.
 
-- [InfinityStaker.sol](./contracts/staking/InfinityStaker.sol)
-- [InfinityToken.sol](./contracts/token/InfinityToken.sol)
+- [InfinityStaker.sol](https://github.com/code-423n4/2022-06-infinity/blob/main/contracts/staking/InfinityStaker.sol)
+- [InfinityToken.sol](https://github.com/code-423n4/2022-06-infinity/blob/main/contracts/token/InfinityToken.sol)
 
 # Gas costs
 
@@ -54,11 +54,11 @@ Our contracts are the most efficient NFT exchange contracts in the world. Users 
 
 Match orders gas table (auto sniped):
 
-![Match_Orders](./static/matchOrdersGas.png)
+![Match_Orders](https://github.com/code-423n4/2022-06-infinity/blob/main/static/matchOrdersGas.png)
 
 Take orders gas table (user initiated):
 
-![Take_Orders](./static/takeOrdersGas.png)
+![Take_Orders](https://github.com/code-423n4/2022-06-infinity/blob/main/static/takeOrdersGas.png)
 
 # Tests
 
