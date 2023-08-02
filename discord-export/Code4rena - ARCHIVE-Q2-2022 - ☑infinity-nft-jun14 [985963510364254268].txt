@@ -1,0 +1,534 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q2-2022 / ☑infinity-nft-jun14
+==============================================================
+
+[06/13/2022 5:55 PM] kartoonjoy
+👋 Hello and welcome to the contest channel for the $50K USDC **Infinity NFT marketplace** contest!
+
+📆 Contest opens 06/14/2022 8:00 PM (20:00 UTC) and runs through 06/19/2022 7:59 PM (19:59 UTC) (5 days).
+
+Please give a warm welcome to the Infinity NFT marketplace team, particularly @nneverlander, who will be available for questions either here in the channel or via DM.
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this contest, consider enabling notifications for this channel. 🐺 ⏰
+
+Contest Page: https://code4rena.com/contests/2022-06-infinity-nft-marketplace-contest
+
+{Embed}
+https://code4rena.com/contests/2022-06-infinity-nft-marketplace-contest
+Code4rena Infinity NFT Marketplace contest
+$50,000 USDC
+14 June 2022—19 June 2022
+Code4rena - ARCHIVE-Q2-2022 - ☑infinity-nft-jun14 [985963510364254268].txt_Files/C4-banner-7C19B.png
+
+{Reactions}
+🎉 (8) 
+
+[06/13/2022 6:42 PM] nneverlander
+
+
+{Stickers}
+Code4rena - ARCHIVE-Q2-2022 - ☑infinity-nft-jun14 [985963510364254268].txt_Files/816086581509095424-4F69B.json
+
+{Reactions}
+👋 (17) nice (2) 
+
+[06/14/2022 8:23 PM] hansfriese
+Hello @nneverlander 
+Nice to meet you.
+Let me confirm one thing.
+So the scope of the contest contains 4 .sol files?
+
+I see rsvp said this contest has 2 files only before.
+
+
+[06/14/2022 8:23 PM] hansfriese
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q2-2022 - ☑infinity-nft-jun14 [985963510364254268].txt_Files/screenshot_19-923B2.png
+
+
+[06/14/2022 8:30 PM] nneverlander
+hey yo - yea 4 .sol files - but the InfinityToken.sol is a pretty standard ERC20 contract so effectively 3 .sol files
+
+
+[06/14/2022 8:30 PM] nneverlander
+InfinityExchange.sol, InfinityOrderBookComplication.sol and InfinityStaking.sol
+
+
+[06/14/2022 8:32 PM] hansfriese
+I got it. Thanks for your answer.
+
+
+[06/14/2022 8:39 PM] 100proof
+@nneverlander Could you explain what sniping is?
+
+
+[06/14/2022 8:41 PM] nneverlander
+Sniping simply means buying an NFT as soon as it is listed; its just a term used by degen traders
+
+
+[06/15/2022 1:46 AM] rotcivegaf
+InfinityStaker.sol*
+
+{Reactions}
+👍🏻 
+
+[06/15/2022 5:12 AM] chatch
+some tests are failing in the repo:
+```
+  217 passing (3m)
+  22 failing
+```
+does everyone get this too?
+
+{Reactions}
+👍🏻 
+
+[06/15/2022 5:22 AM] chatch
+ah so failures occuring with `hardhat test` but all tests passing with `runTests.sh` so that's fine. i'll run the tests with that script or individually.
+
+{Reactions}
+👍🏻 
+
+[06/15/2022 2:51 PM] 0xdjango
+I’m a bit unfamiliar with vyper. What’s the rationale behind eventually porting these over to vyper?
+
+
+[06/15/2022 2:55 PM] merkleplant
+gas golfing I guess 😄
+
+{Reactions}
+💯 (3) 
+
+[06/16/2022 12:02 AM] 0xdjango
+Probably a dense question, but how does a user actually create a buy or sell order? I'm only seeing functions to match orders and cancel existing.
+
+
+[06/16/2022 2:26 AM] nneverlander
+Creating orders is an off chain action
+
+
+[06/16/2022 2:26 AM] nneverlander
+You can see the test cases for some examples
+
+{Reactions}
+thankyou 
+
+[06/16/2022 3:39 PM] izhuer
+Hi, may I know how the off-chain mechanism works? Taking `matchOneToManyOrders` as an example, when a user propose an order, will the `MATCH_EXECUTOR` automatically group orders as `manyMakerOrders` ? or the user needs to specify a group of orders as `manyMakerOrders` and let `MATCH_EXECUTOR` know?
+
+
+[06/16/2022 3:40 PM] izhuer
+Is there any doc about the algorithm used by `MATCH_EXECUTOR`, lol 😂
+
+
+[06/16/2022 7:11 PM] nneverlander
+no this code is not public
+
+
+[06/16/2022 7:11 PM] nneverlander
+yes the executor will group orders automatically
+
+{Reactions}
+👍 
+
+[06/17/2022 8:58 AM] un_for_given
+@nneverlander DMing you about the contest.
+
+
+[06/17/2022 9:14 AM] ligaratus_
+sent a DM as well @nneverlander 🙂
+
+
+[06/17/2022 9:37 AM] nneverlander
+thanks
+
+
+[06/17/2022 12:27 PM] izhuer
+:gm:
+
+
+[06/17/2022 12:27 PM] izhuer
+an off-topic question about how the award pool would be distributed? Sorry it is my first C4 contest.:hearteyes:
+
+
+[06/17/2022 1:04 PM] dmitriia
+The process is the same for all the contests, it's in the docs on the site.
+
+{Reactions}
+thankyou 
+
+[06/17/2022 1:04 PM] illilli000
+It's split based on how many high/med findings you have, and how many others have found them: https://docs.code4rena.com/incentive-model-and-awards
+
+{Reactions}
+hahaanimado thankyou thankyou 
+
+[06/17/2022 3:45 PM] izhuer
+can we have the off-chain logic of validating an order? Or the one for the [test](https://github.com/code-423n4/2022-06-infinity/blob/765376fa238bbccd8b1e2e12897c91098c7e5ac6/helpers/orders.ts#L147) is already good enough?
+
+
+[06/17/2022 3:45 PM] izhuer
+That will help reduce the attack surface of crafting orders
+
+
+[06/17/2022 4:42 PM] nneverlander
+we can put in more logic by calling verify* functions on the contract, checking asset ownership etc
+
+
+[06/17/2022 4:52 PM] bernd_42
+Almost all tests are failing for me. E.g for staker.js, `0 passing (3s) 9 failing` (used `npx hardhat test --grep Staker`)
+
+
+[06/17/2022 4:54 PM] bernd_42
+I've created a `.env` file with following config keys:
+
+```
+ETH_GOERLI_PRIV_KEY=
+ETH_GOERLI_PRIV_KEY_2=
+ETH_MAINNET_PRIV_KEY=
+ETH_MAINNET_PRIV_KEY_2=
+ALCHEMY_GOERLI_KEY=
+ALCHEMY_MAINNET_KEY=
+ETHERSCAN_API_KEY=
+```
+
+(values omitted here)
+
+
+[06/17/2022 5:44 PM] cryptphi
+phew! I was searching all over for function to create buy or sell order too...just came in here to ask same question
+
+
+[06/17/2022 7:58 PM] nneverlander
+what's the error?
+
+
+[06/17/2022 8:21 PM] bernd_42
+This are the failing test results for staker.js
+
+{Attachments}
+Code4rena - ARCHIVE-Q2-2022 - ☑infinity-nft-jun14 [985963510364254268].txt_Files/message-CAF88.txt
+
+
+[06/17/2022 8:42 PM] nneverlander
+do you have the right folder setup?
+
+
+[06/17/2022 8:46 PM] bernd_42
+Yes, I've cloned the repo and ran the test in the root directory
+
+
+[06/17/2022 9:18 PM] nneverlander
+im not seeing this on my end and no one else reported this
+
+
+[06/17/2022 9:18 PM] nneverlander
+maybe you can DM me and we can figure it out offline?
+
+
+[06/17/2022 9:19 PM] bernd_42
+wtf, just figured it out. I used `yarn` instead of `npm`. I also fixed the package.json versions. Maybe that also fixed it. Anyway, now the tests succeed
+
+{Reactions}
+👍🏻 same 
+
+[06/19/2022 5:14 AM] zer0dot
+Hey guys just a quick FYI here too
+
+
+[06/19/2022 5:14 AM] zer0dot
+```
+    // the below 3 variables are copied to memory once to save on gas
+    // an SLOAD costs minimum 100 gas where an MLOAD only costs minimum 3 gas
+    // since these values won't change during function execution, we can save on gas by copying them to memory once
+    // instead of SLOADing once for each loop iteration
+```
+
+
+[06/19/2022 5:15 AM] zer0dot
+This is not actually true, the variables aren't stored in memory by declaring them here, they're just added to the stack!
+
+
+[06/19/2022 5:40 AM] nneverlander
+what about gas savings?
+
+
+[06/19/2022 10:06 AM] cryptphi
+saw this in the contest details, "...Each inflation epoch adds 250M tokens to the supply...." 
+
+please can you clarify who the additional token supply is sent to?
+
+
+[06/19/2022 10:50 AM] nneverlander
+to the contract admin to be used for platform incentives
+
+
+[06/19/2022 12:41 PM] cryptphi
+cool, thanks
+
+
+[06/19/2022 8:02 PM] C4
+**🚨 CONTEST ALERT**
+
+@🐺wardens The **Infinity NFT marketplace** contest is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: the **Infinity NFT marketplace** team will review the findings over the next couple of days, and then we'll pass them off to the judge. Keep an eye on #📢announcements for regular updates on how the contest is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a gardener if you have questions along the way!
+
+{Reactions}
+🙏 
+
+[06/19/2022 8:04 PM] Wayne#7117
+I have submitted several High level Issues in this competition, if there is something you don't understand in the report I submitted, you can ask me.
+
+{Reactions}
+🔥 (7) 
+
+[06/19/2022 8:04 PM] Wayne#7117
+FYI.
+
+
+[06/19/2022 9:01 PM] rotcivegaf
+Could provide information on the amount of finding and warden that we participate?
+
+
+[06/19/2022 9:05 PM] illilli000
+please read this page https://docs.code4rena.com/philosophy/how-we-work
+
+{Embed}
+https://docs.code4rena.com/philosophy/how-we-work
+The culture we’re building
+
+{Reactions}
+thankyou 
+
+[06/19/2022 9:13 PM] rotcivegaf
+I have read it and I support it.  but I am concerned about the security of this contest, there was a lot to fix
+
+
+[06/19/2022 9:14 PM] illilli000
+How was your comment meant to help? It seemed like just an attack
+
+
+[06/19/2022 9:16 PM] rotcivegaf
+sorry I didn't mean to sound like that, I delete the comment, sometimes wanting to help offends
+
+{Reactions}
+👍 (3) thankyou 
+
+[06/19/2022 9:18 PM] izhuer
+There should be a much better and more polite way to point out what the project did is not good enough and where they can further improve. That is why we are here and how we want to develop the community.  😄
+
+{Reactions}
+💜 (5) 💯 (4) 
+
+[06/20/2022 1:03 AM] zer0dot
+Gas savings are legit :pepeOK:
+
+{Reactions}
+🔥 
+
+[06/20/2022 1:13 AM] p12473
+when does it move from stack to memory?
+
+
+[06/20/2022 2:11 AM] zer0dot
+if possible, never
+
+{Reactions}
+👍 
+
+[06/20/2022 2:11 AM] zer0dot
+unless it's a dynamic type
+
+
+[06/20/2022 2:11 AM] zer0dot
+otherwise, if you're using asm or the IR pipeline, the compiler can move stack variables to memory to avoid a stack overflow
+
+{Reactions}
+👆 
+
+[06/20/2022 5:30 AM] nneverlander
+hey we won't be offended easily - you can DM me your concerns if you wish
+
+{Reactions}
+❤️ (2) 
+
+[06/20/2022 5:31 AM] nneverlander
+will start going through the findings today and summarize here if it helps (and if it is allowed)
+from what I've seen so far, there are just 2 critical bugs that would've resulted in permanent loss of assets by users (one of them related to ERC1155 which we don't support anymore at the contract level and was never supported in our UI and indexers)
+
+
+[06/20/2022 5:33 AM] nneverlander
+cool - the comments were written somewhat hurriedly so they are not 'technically' accurate in all places
+
+
+[06/20/2022 12:10 PM] izhuer
+Just curious, whether the ERC1155 bug will be ranked as high severity, since ERC1155 seems to be in the scope based on the contract code.
+
+
+[06/20/2022 12:11 PM] nneverlander
+hey sure I think its fair to mark it as high severity
+
+{Reactions}
+👍 
+
+[07/26/2022 3:14 PM] h3ck#8953
+hi? is there any update for this contest?
+
+
+[07/27/2022 9:19 AM] apostle0x01#2755
+https://github.com/code-423n4/code423n4.com/pull/3052/commits/82e1ac88e94aed600535cdaab2aa24ad8165a2aa
+
+{Embed}
+https://github.com/code-423n4/code423n4.com/pull/3052/commits/82e1ac88e94aed600535cdaab2aa24ad8165a2aa
+Update leaderboard for contest: Infinity NFT marketplace by code423...
+This auto-generated PR to the update the leaderboard
+Code4rena - ARCHIVE-Q2-2022 - ☑infinity-nft-jun14 [985963510364254268].txt_Files/81770958-D6E57
+
+{Reactions}
+thankyou (3) 
+
+[07/27/2022 2:37 PM] izhuer
+lol, nice! looking forwards to merging it.
+
+
+[07/28/2022 12:44 AM] liveactionllamac4
+🤑 🎉 Awards for **Infinity NFT Marketplace**:
+
+$7,659.99 USDC » PwnedNoMore (@izhuer, @ItsNio, @papr1ka2)
+$6,853.32 USDC » @unforgiven 
+$5,213.95 USDC » @shenwilly 
+$2,839.96 USDC » @kenzo 
+$2,443.71 USDC » @Django | Saloon Finance 
+$2,342.10 USDC » @0xsanson 
+$1,437.34 USDC » WatchPug (@JtP | WATCHPUG, @Ming | WATCHPUG)
+$1,389.55 USDC » @alpharush 
+$1,303.59 USDC » @csanuragjain 
+$1,293.20 USDC » KIntern (@minhquanym, @TrungOre)
+$1,084.14 USDC » GimelSec (@rayn | GimelSec, @sces60107 | GimelSec)
+$1,067.74 USDC » GreyArt (@hickuphh3, @P12473)
+$848.49 USDC » @zzzitron 
+$847.18 USDC » @hyh 
+$812.96 USDC » k
+$683.92 USDC » @joestakey 
+$671.42 USDC » @antonttc 
+$637.56 USDC » 0x29A ( @anon, @Rotcivegaf)
+$604.27 USDC » @IllIllI 
+$569.40 USDC » @Ruhum 
+$526.35 USDC » @Throttle 
+$505.48 USDC » 0xf15ers (@remora0, @twojoy)
+$446.25 USDC » @VAD37 
+$418.60 USDC » @cccz 
+$361.02 USDC » @dipp 
+$325.90 USDC » @wagmi 
+$315.72 USDC » @Bernd 
+$291.79 USDC » @peritoflores 
+$276.92 USDC » @auditor0517 
+$276.92 USDC » p4st13r4 ( @0x69e8, @0xb4bb4)
+$264.63 USDC » BowTiedWardens (@BowTiedHeron, @BowTiedPickle, @m4rio.eth, @Dravee, @BowTiedFirefox)
+$264.33 USDC » @obtarian 
+$249.18 USDC » @0x1f8b 
+$201.30 USDC » @lucyoa 
+$188.99 USDC » @thinklab 
+$175.61 USDC » @Roman 
+$175.59 USDC » @codexploder 
+$148.21 USDC » @horsefacts 
+$142.19 USDC » @robee 
+$116.96 USDC » @DefSec 
+$97.22 USDC » @Kenshin 
+$95.18 USDC » byterocket (@marvinkruse, @pmerkleplant)
+$91.43 USDC » @StErMi 
+$91.43 USDC » @0xkowloon 
+$91.32 USDC » @Wayne 
+$91.28 USDC » @rfa 
+$87.77 USDC » @MiloTruck 
+$86.69 USDC » @madwookie 
+$84.26 USDC » @0xNazgul 
+$83.56 USDC » @simon135 
+$83.56 USDC » @FSchmoede 
+$82.80 USDC » @hansfriese 
+$81.11 USDC » @PPrieditis 
+$80.72 USDC » @_Adam 
+$80.56 USDC » @Picodes | Angle 
+$80.49 USDC » @TerrierLover 
+$80.35 USDC » @hake | SmartSek 
+$80.32 USDC » @Chom 
+$80.28 USDC » @Kaiziron 
+$80.27 USDC » @ElKu 
+$80.21 USDC » @Funen 
+$80.21 USDC » @sach1r0 
+$80.20 USDC » @kenta 
+$80.20 USDC » @TomJ 
+$80.20 USDC » @delfin454000 
+$80.20 USDC » @fatherOfBlocks 
+$80.20 USDC » @apostle0x01 
+$80.19 USDC » @Sloth 
+$63.51 USDC » @Zer0dot 
+$60.79 USDC » @0xNineDec 
+$60.06 USDC » @saian 
+$60.06 USDC » @rajatbeladiya 
+$58.25 USDC » @cryptphi 
+$49.15 USDC » @Treasure-Seeker 
+$49.07 USDC » @samruna 
+$49.05 USDC » @sorryNotsorry 
+$49.01 USDC » @Czar102 
+$49.01 USDC » @100proof 
+$48.99 USDC » georgypetrov
+$48.98 USDC » @cloudjunky 
+$48.98 USDC » @0x52 - Away Until 8/9 
+$48.98 USDC » @8olidity 
+$48.98 USDC » @Cityscape 
+$48.98 USDC » @0xmint 
+$48.98 USDC » @bvttplvg 
+$48.98 USDC » @Sm4rty 
+$48.98 USDC » @abhinavmir / evmsecurity.org 
+$48.98 USDC » @a12jmx 
+$47.97 USDC » @0xKitsune 
+$33.03 USDC » @0xkatana 
+$32.66 USDC » @Tomio 
+$32.13 USDC » @Tadashi 
+$31.29 USDC » @c3phas
+
+{Reactions}
+C4Keycap (10) 
+
+[07/28/2022 12:44 AM] liveactionllamac4
+$31.26 USDC » @Waze 
+$31.25 USDC » @slywaters 
+$31.22 USDC » @0xAsm0d3us 
+$31.22 USDC » @0v3rf10w 
+$21.19 USDC » @m9800 
+$11.08 USDC » @obront 
+
+🏁 Findings summary
+---------------------------
+High risk findings: 77 total, 11 unique
+Med risk findings: 40 total, 9 unique
+Gas optimization reports: 56
+QA reports: 78
+
+Awards will be distributed on Polygon within the next 1-2 weeks. Congratulations all! 💸 💸 💸
+
+{Reactions}
+C4Keycap (7) 🙏 (4) nice (2) 
+
+[08/07/2022 2:34 AM] itsnio
+4\
+
+
+[09/25/2022 3:40 PM] 0xsorrynotsorry
+Were the rewards distributed for this?
+
+
+[09/25/2022 3:58 PM] zzzitron
+yes
+
+{Reactions}
+thankyou (3) 
+
+==============================================================
+Exported 75 message(s)
+==============================================================

@@ -1,0 +1,99 @@
+0 passing (4s)
+  9 failing
+
+  1) Staker
+       Setup
+         Should init properly:
+
+      AssertionError: expected { Object (_hex, _isBigNumber) } to equal { Object (_hex, _isBigNumber) }
+      + expected - actual
+
+
+      at Context.<anonymous> (test/staker.js:133:44)
+
+  2) Staker
+       Stake tokens to silver level
+         Should stake:
+
+      AssertionError: expected { Object (_hex, _isBigNumber) } to equal { Object (_hex, _isBigNumber) }
+      + expected - actual
+
+
+      at Context.<anonymous> (test/staker.js:157:57)
+
+  3) Staker
+       Stake tokens to gold level
+         Should stake:
+
+      AssertionError: expected { Object (_hex, _isBigNumber) } to equal { Object (_hex, _isBigNumber) }
+      + expected - actual
+
+
+      at Context.<anonymous> (test/staker.js:171:75)
+
+  4) Staker
+       Change duration to gold level and overall level to platinum
+         Should change duration:
+
+      AssertionError: expected { Object (_hex, _isBigNumber) } to equal BigNumber { value: "0" }
+      + expected - actual
+
+       {
+      -  "_hex": "0x676492949617ec8e700000"
+      +  "_hex": "0x00"
+         "_isBigNumber": true
+       }
+
+      at Context.<anonymous> (test/staker.js:184:57)
+
+  5) Staker
+       Try changing duration to silver level
+         Should not change duration:
+     Error: Invalid Chai property: revertedWith
+      at Object.proxyGetter [as get] (node_modules/chai/lib/chai/utils/proxify.js:78:17)
+      at Context.<anonymous> (test/staker.js:191:77)
+
+  6) Staker
+       RageQuit to bronze level
+         Should rage quit:
+     AssertionError: expected BigNumber { value: "0" } to equal +0
+      at Context.<anonymous> (test/staker.js:200:30)
+
+  7) Staker
+       Stake tokens to silver level
+         Should stake:
+
+      AssertionError: expected 3 to equal 1
+      + expected - actual
+
+      -3
+      +1
+
+      at Context.<anonymous> (test/staker.js:225:74)
+
+  8) Staker
+       Unstake tokens to bronze level
+         Should unstake:
+
+      AssertionError: expected 3 to equal +0
+      + expected - actual
+
+      -3
+      +0
+
+      at Context.<anonymous> (test/staker.js:236:74)
+
+  9) Staker
+       Stake and unstake tests
+         Should succeed:
+
+      AssertionError: expected { Object (_hex, _isBigNumber) } to equal { Object (_hex, _isBigNumber) }
+      + expected - actual
+
+       {
+      -  "_hex": "0x02440c545cf867b00000"
+      +  "_hex": "0x010f0cf064dd59200000"
+         "_isBigNumber": true
+       }
+
+      at Context.<anonymous> (test/staker.js:253:75)
